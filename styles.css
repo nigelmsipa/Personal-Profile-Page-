@@ -1,8 +1,13 @@
-/* Global Layout Set-up */
-* { 
+/**
+ * /* Global Layout Set-up
+ *
+ * @format
+ */
+
+* {
   box-sizing: border-box;
 }
-  
+
 body {
   margin: 0;
   padding: 0;
@@ -15,17 +20,17 @@ body {
 
 a {
   text-decoration: none;
-  color: #999;
+  color: white;
 }
 a:hover {
-  color: #6633ff;
+  color: #f9484a;
 }
 
 /* Section Styles */
 
 .main-nav {
   width: 100%;
-  background: black;
+  background: #f9484a;
   min-height: 30px;
   padding: 10px;
   position: fixed;
@@ -41,23 +46,23 @@ a:hover {
 }
 
 .nav .name {
-    display: block;
-    margin-right: auto;
-    color: white;
+  display: block;
+  margin-right: auto;
+  color: white;
 }
 .nav li {
   padding: 5px 10px 10px 10px;
 }
 .nav a {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 .nav a:hover {
-  color: white
+  color: white;
 }
 
 header {
   text-align: center;
-  background: url('images/portland.jpg') no-repeat top center ;
+  background-color: white;
   background-size: cover;
   overflow: hidden;
   padding-top: 60px;
@@ -71,22 +76,21 @@ header .profile-image {
   height: 150px;
   border-radius: 50%;
   border: 3px solid white;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 header .profile-image:hover {
   transform: scale(1.2) rotate(5deg);
 }
 .tag {
-  background-color: #efefef;
-  color: black;
+  color: darkgray;
   padding: 10px;
   border-radius: 5px;
   display: table;
   margin: 10px auto;
-} 
+}
 .location {
-  background-color: #222;
-  color: yellow;
+  background-color: white;
+  color: gray;
 }
 .card {
   margin: 30px;
@@ -96,10 +100,11 @@ header .profile-image:hover {
   background: #fff;
   border-bottom: 4px solid #ccc;
   border-radius: 6px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
+
 .card:hover {
-  border-color: #ff99ff;
+  border-color: #f9484a;
 }
 
 ul.skills {
@@ -128,7 +133,7 @@ footer {
 
 footer .copyright {
   top: -8px;
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 footer ul {
@@ -148,8 +153,8 @@ a.social {
   width: 30px;
   height: 30px;
   background-size: 30px 30px;
-  opacity: .4;
-  transition: all .5s;
+  opacity: 0.4;
+  transition: all 0.5s;
 }
 a.twitter {
   background-image: url(images/twitter.svg);
@@ -160,23 +165,29 @@ a.linkedin {
 a.github {
   background-image: url(images/github.svg);
 }
+a.unsplash {
+  background-image: url(/images/Unsplash_Symbol.svg);
+}
 a.social:hover {
   opacity: 1;
 }
 .clearfix {
   clear: both;
 }
+.contact-me {
+  display: inline-flex;
+  justify-content: center;
+}
 
 /* Styles for larger screens */
 @media screen and (min-width: 720px) {
-  
   .flex {
-      display: -ms-flexbox;      /* TWEENER - IE 10 */
-      display: flex; 
-      max-width: 1200px;
-      -ms-flex-pack: distribute;
-      justify-content: space-around;
-      margin: 0 auto;
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: flex;
+    max-width: 1200px;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin: 0 auto;
   }
 
   header {
@@ -187,7 +198,6 @@ a.social:hover {
     max-width: 1200px;
     padding: 0 30px;
   }
-
 
   main {
     padding-top: 20px;
@@ -202,6 +212,71 @@ a.social:hover {
     max-width: 1200px;
     margin: 40px auto;
   }
-
 }
 
+/* Style inputs, select elements and textareas */
+input[type='text'],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type='submit'] {
+  background-color: #f9484a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type='submit'] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
